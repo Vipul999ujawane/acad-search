@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <title>Welcome to Acad-Search</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="style.css"  media="screen,projection"/>
@@ -12,10 +12,35 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   <div class="row valign-wrapper">
     <div id="title" class="card valign-wrapper center-block col s12 m8 offset-m2 container">
-      <div class="center-align card-action">Welcome to acad-search</div>
+      <div class="center-align card-action">Welcome to Acad-Search</div>
     </div>
     <div id="dept" class="card valign-wrapper center-block col s12 m8 offset-m2 container">
-      <div  class="center-align card-action">Please choose your department:</div>
+      <div  class="center-align card-action">Choose your department:</div>
+      <div class="center-align">
+        <a class='dropdown-button card center-align white black-text' href='#' data-activates='dropdown1'>Department</a>
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a class="black-text click" href="#!">one</a></li>
+          <li><a href="#!">two</a></li>
+          <li class="divider"></li>
+          <li><a href="#!">three</a></li>
+          <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+          <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="year" class="card valign-wrapper center-block col s12 m8 offset-m2 container">
+      <div  class="center-align card-action">Choose your Year of Study:</div>
+      <div class="center-align">
+        <a class='dropdown-button card center-align white black-text' href='#' data-activates='dropdown2'>Year</a>
+        <ul id='dropdown2' class='dropdown-content'>
+          <li><a class="black-text click" href="#!">one</a></li>
+          <li><a href="#!">two</a></li>
+          <li class="divider"></li>
+          <li><a href="#!">three</a></li>
+          <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+          <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </body>
