@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome to Acad-Search</title>
+    <title>New User</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="../static/style.css"  media="screen,projection"/>
@@ -10,13 +10,53 @@
 <body>
 <div>
   <div class="row valign-wrapper">
-    <div id="register" class="centre card valign-wrapper center-block col s12 m8 offset-m1 container">
+    <div id="register" class="centre card valign-wrapper center-block col s12 m8 offset-m2 container">
       <div class="center-align card-action">Registration</div>
-      <div class="input-field col m6 offset-m3">
-          <input id="roll_no" type="text" class="validate">
-          <label class="black-text" for="roll_no">Roll No</label>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="roll" type="text" class="validate center-align" required="" aria-required="true">
+              <label for="roll">Roll No</label>
+            </div>
+            <div class="input-field col s12 center-align">
+              <button id="no" class="btn waves-effect waves-dark white black-text " type="submit" name="action">Submit</button>
+            </div>
+          </div>
+        </form>
       </div>
-      <input id='roll' type='submit' class="btn waves-effect waves-light grey black-text col m2">Submit</input>
+    </div>
+    <div id="name_form" class="centre card valign-wrapper center-block col s12 m8 offset-m2 container">
+      <div class="center-align card-action">Registration</div>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="rolln" type="text" class="validate center-align" required="" aria-required="true">
+              <label for="roll">Roll No</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="name" type="text" class="validate center-align" required="" aria-required="true">
+              <label for="name">Name</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="hall" type="text" class="validate center-align" required="" aria-required="true">
+              <label for="hall">Hall</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate center-align" required="" aria-required="true">
+              <label for="email">e-mail</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate center-align" required="" aria-required="true">
+              <label for="password">Password</label>
+            </div>
+            <div class="input-field col s12 center-align">
+              <button id="no" class="btn waves-effect waves-dark white black-text " type="submit" name="action">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>

@@ -6,6 +6,8 @@ $(".click").click(function(){
     $("#year").slideDown("slow");
   });
 });
-$("#register").submit(function(event){
-  $("#register").slideUp("slow");
+$("#no").click(function(){               //convert .click to .submit during AJAXifyy
+  $("#register").slideUp("slow",function(){
+    $("#name_form").slideDown("slow");
+  });
 });
