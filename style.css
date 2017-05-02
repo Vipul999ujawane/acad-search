@@ -22,3 +22,15 @@ display: none;
     /* bring your own prefixes */
     transform: translate(0%, -50%);
 }
+.centre{
+  position: fixed; /* or absolute */
+  top: 50%;
+  /* bring your own prefixes */
+  transform: translate(0%, -50%);
+}
+#register{
+  font-size: 200%;
+}
+#body{
+  display: none;
+}
