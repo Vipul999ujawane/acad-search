@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from acads.views import upload,home,success
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^upload/',upload),
+    url(r'^$',home),
+    url(r'^success/',success),
 ]
