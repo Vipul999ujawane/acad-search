@@ -6,4 +6,4 @@ from django.forms import ModelForm
 class UploadForm(ModelForm):
     class Meta:
         model=Files
-        fields=['file_name','files','subject','uploader_roll_no','uploader_email']
+        fields=['uploader_roll_no','uploader_email','subject','description','file_name','files',]
