@@ -6,7 +6,7 @@ import os
 # Create your models here.
 
 def get_file_path(instance,filename):
-    return (settings.MEDIA_ROOT+'/'+instance.subject.departement_code+'/'+instance.subject.subject_code+'/'+filename)
+    return (settings.MEDIA_ROOT+'/'+instance.subject.department_code+'/'+instance.subject.subject_code+'/'+filename)
 
 class Subject(models.Model):
     department_code=models.CharField(max_length=2,blank=False)

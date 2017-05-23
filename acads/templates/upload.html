@@ -3,11 +3,13 @@
   <head>
     <title>Upload Files</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="../static/style.css"  media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div>
   <div class="row valign-wrapper">
     <div id='upl' class="centre card valign-wrapper center-block col s12 m8 offset-m2 container">
@@ -16,7 +18,16 @@
         <form class="col s12">
           <div class="row">
             <div class="container">
+              <form>
+                <p><label for="id_department">Department:</label> <select name="department" required id="id_department">
+                  <option value="" selected>---------</option>
+                  {%for sub in subject%}
+                      <option value="{{sub}}">{{sub}}</<option>
+                  {%endfor%}
+                </select>
+                </form>
             <form  method="post"  action="" enctype="multipart/form-data">
+              {% csrf_token %}
               {{form.as_p}}
             <input type="submit" value="Upload" formmethod="post" formaction="" formenctype="multipart/form-data">
           </form>
@@ -31,7 +42,27 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 <script>
-    $( "#upl" ).delay(400).slideDown(1000,function(){$('select').material_select();});
-
+    $(document).ready(function(){
+      $( "#upl" ).delay(400).slideDown(1000,function(){$('select').material_select();});
+      $('select[name=subject]').empty();
+      $('select[name=department]').change(function(){
+        dept = $(this).val();
+        request_url = '/get_sub_list/' + dept + '/';
+        $.ajax({
+          url: request_url,
+          type: 'GET',
+          dataType:'json',
+          success: function(data){
+            $('select[name=subject]').empty();
+            $.each(data, function(index, text){
+              console.log(text.pk+"|"+text.fields.subject_code+"|"+text.fields.subject_name);
+                $('select[name=subject]').append($("<option></option>").val(text.pk).html(text.fields.subject_code+"|"+text.fields.subject_name));
+              });
+              $('select[name=subject]').material_select();
+              console.log("Complete");
+            }
+          });});
+        });
+    </script>
 </script>
 </html>
