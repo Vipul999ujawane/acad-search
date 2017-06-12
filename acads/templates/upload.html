@@ -17,7 +17,7 @@
       <div class="row">
         <form class="col s12">
           <div class="row">
-            <div class="container">
+            <div class="container black-text">
               <form>
                 <p><label for="id_department">Department:</label> <select name="department" required id="id_department">
                   <option value="" selected>---------</option>
@@ -56,7 +56,7 @@
             $('select[name=subject]').empty();
             $.each(data, function(index, text){
               console.log(text.pk+"|"+text.fields.subject_code+"|"+text.fields.subject_name);
-                $('select[name=subject]').append($("<option></option>").val(text.pk).html(text.fields.subject_code+"|"+text.fields.subject_name));
+                $('select[name=subject]').append($("<option></option>").val(text.pk).html(text.fields.subject_code+" | "+text.fields.subject_name));
               });
               $('select[name=subject]').material_select();
               console.log("Complete");
@@ -64,5 +64,5 @@
           });});
         });
     </script>
-</script>
+    
 </html>

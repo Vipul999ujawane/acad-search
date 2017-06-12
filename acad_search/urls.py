@@ -18,8 +18,12 @@ from django.contrib import admin
 from acads import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^upload/',views.upload),
+    url(r'^upload/',views.upload,name="upload"),
     url(r'^$',views.home),
     url(r'^success/',views.success),
-    url(r'^get_sub_list/(?P<dept>\D+)/$',views.get_sub_list)
+    url(r'^get_sub_list/(?P<dept>\D+)/$',views.get_sub_list),
+    url(r'^files/(?P<dept>\D+)/(?P<year>\w+)/$',views.get_files)
 ]
+
+admin.site.site_title= "</acad-search> Admin"
+admin.site.site_header="</acad-search> Admin"

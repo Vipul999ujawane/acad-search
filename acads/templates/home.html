@@ -3,7 +3,7 @@
   <head>
     <title>Welcome to Acad-Search</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="../static/style.css"  media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -16,43 +16,39 @@
       <div class="center-align card-action">Welcome to Acad-Search</div>
     </div>
     <div id="dept" class="card valign-wrapper center-block col s12 m8 offset-m2 container">
-      <div  class="center-align card-action">Choose your department:</div>
-      <div class="center-align">
-        <a class='dropdown-button card center-align white black-text' href='#' data-activates='dropdown1'>Department</a>
-        <ul id='dropdown1' class='dropdown-content'>
-          <li><a class="black-text click" href="#!">one</a></li>
-          <li><a href="#!">two</a></li>
-          <li class="divider"></li>
-          <li><a href="#!">three</a></li>
-          <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-          <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-        </ul>
+      <div id="sub"><label for="id_department">Department:</label> <select name="department" required id="id_department">
+        <option value="" selected>---------</option>
+        {%for sub in subject%}
+            <option value="{{sub}}">{{sub}}</<option>
+        {%endfor%}
+      </select>
       </div>
-    </div>
-    <div id="year" class="card valign-wrapper center-block col s12 m8 offset-m2 container">
-      <div  class="center-align card-action">Choose your Year of Study:</div>
-      <div class="center-align">
-        <a class='dropdown-button card center-align white black-text' href='#' data-activates='dropdown2'>Year</a>
-        <ul id='dropdown2' class='dropdown-content'>
-          <li><a class="black-text click" href="#!">one</a></li>
-          <li><a href="#!">two</a></li>
-          <li class="divider"></li>
-          <li><a href="#!">three</a></li>
-          <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-          <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-        </ul>
       </div>
-    </div>
-  </div>
+      <div id="year" class="card valign-wrapper center-block col s12 m8 offset-m2 container">
+        <label for="id_year">Year:</label> <select name="year" required id="id_year">
+        <option value="" selected>---------</option>
+        {%for yea in year%}
+            <option value="{{yea}}">{{yea}}</<option>
+        {%endfor%}
+      </select>
+      </div>
+
+</div>
 </body>
 <script>
-$( "#title" ).delay(2000).slideUp( "slow",function()
-{$("#dept").slideDown("slow");
-});
-$(".click").click(function(){
-  $("#dept").slideUp("slow",function(){
-    $("#year").slideDown("slow");
+$('select').material_select();
+$( "#title" ).delay(2000).slideUp( "slow",function(){
+  $("#dept").slideDown("slow");
+  $('select[name=department]').change(function(){
+    $("#dept").delay(500).slideUp("slow",function(){
+      $("#year").slideDown("slow");
+    });
+  });
+  $('select[name=year]').change(function(){
+    window.location.assign("/files/"+$("select[name=department]").val()+"/"+$("select[name=year]").val())
   });
 });
+  //$('form').submit(function(){
+    //document.location.assign("/upload");});
 </script>
 </html>

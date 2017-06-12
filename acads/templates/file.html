@@ -1,0 +1,18 @@
+<!DOCTYPE>
+<html>
+<title>
+  acad_search/{{dept}}/{{year}}
+</title>
+<body>
+  <h1>You've reached {{dept}} {{year}}</h1>
+  {%if files%}
+  <ul>
+      {%for file in files%}
+          <li>{{file.file_name}}</li>
+      {%endfor%}
+    </ul>
+    {%else%}
+    <h1>Sorry! No file found</h1>
+    {%endif%}
+</body>
+</html>

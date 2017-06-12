@@ -14,6 +14,14 @@ display: none;
   /* bring your own prefixes */
   transform: translate(0%, -50%);
 }
+#sub{
+  display: none;
+    font-size: 200%!important;
+    position: fixed; /* or absolute */
+    top: 50%;
+    /* bring your own prefixes */
+    transform: translate(0%, -50%);
+}
 #year{
   display: none;
     font-size: 200%!important;
