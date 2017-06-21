@@ -36,11 +36,11 @@ def success(request):
 def get_sub_list(request,dept):
     sub=Subject.objects.filter(department_code=dept).order_by('subject_code')
     data=serializers.serialize("json",sub)
-    print data
+    #print data
     return HttpResponse(data, content_type="application/json")
 
 def get_files(request,dept,year):
     q=dept+year
     files=Files.objects.filter(subject__subject_code__contains=q,verified=True)
-    print files
+    #print files
     return render(request,'file.html',{'dept':dept,'year':year,'files':files})

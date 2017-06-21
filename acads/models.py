@@ -24,7 +24,10 @@ class Files(models.Model):
     uploader_roll_no=models.CharField(max_length=100,blank=False)
     uploader_email=models.EmailField(blank=False)
     description=models.TextField(blank=False)
-
+    def get_relative_path(self):
+        pat=os.path.relpath(self.files.path, settings.MEDIA_ROOT)
+        return (settings.MEDIA_URL+pat)
+    relative_path=property(get_relative_path)
     class Meta:
         verbose_name='File'
         verbose_name_plural='Files'

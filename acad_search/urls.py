@@ -16,14 +16,16 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from acads import views
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^upload/',views.upload,name="upload"),
     url(r'^$',views.home),
     url(r'^success/',views.success),
     url(r'^get_sub_list/(?P<dept>\D+)/$',views.get_sub_list),
-    url(r'^files/(?P<dept>\D+)/(?P<year>\w+)/$',views.get_files)
-]
+    url(r'^files/(?P<dept>\D+)/(?P<year>\w+)/$',views.get_files),
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 admin.site.site_title= "</acad-search> Admin"
 admin.site.site_header="</acad-search> Admin"

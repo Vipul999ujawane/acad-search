@@ -15,14 +15,12 @@
     <div id="title" class="card valign-wrapper center-block col s12 m8 offset-m2 container">
       <div class="center-align card-action">Welcome to Acad-Search</div>
     </div>
-    <div id="dept" class="card valign-wrapper center-block col s12 m8 offset-m2 container">
-      <div id="sub"><label for="id_department">Department:</label> <select name="department" required id="id_department">
+    <div id="dept" class="card valign-wrapper center-block col s12 m8 offset-m2 container"><label for="id_department">Department:</label> <select name="department" required id="id_department">
         <option value="" selected>---------</option>
         {%for sub in subject%}
             <option value="{{sub}}">{{sub}}</<option>
         {%endfor%}
       </select>
-      </div>
       </div>
       <div id="year" class="card valign-wrapper center-block col s12 m8 offset-m2 container">
         <label for="id_year">Year:</label> <select name="year" required id="id_year">
@@ -39,6 +37,7 @@
 $('select').material_select();
 $( "#title" ).delay(2000).slideUp( "slow",function(){
   $("#dept").slideDown("slow");
+  $('select[name=department]').material_select();
   $('select[name=department]').change(function(){
     $("#dept").delay(500).slideUp("slow",function(){
       $("#year").slideDown("slow");
