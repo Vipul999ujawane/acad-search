@@ -1,0 +1,43 @@
+#title {
+  font-size: 400%!important;
+  position: fixed; /* or absolute */
+  top: 50%;
+  /* bring your own prefixes */
+  transform: translate(0%, -50%);
+
+}
+#dept{
+display: none;
+  font-size: 200%!important;
+  position: fixed; /* or absolute */
+  top: 50%;
+  /* bring your own prefixes */
+  transform: translate(0%, -50%);
+}
+
+#year{
+  display: none;
+    font-size: 200%!important;
+    position: fixed; /* or absolute */
+    top: 50%;
+    /* bring your own prefixes */
+    transform: translate(0%, -50%);
+}
+.centre{
+  position: fixed; /* or absolute */
+  top: 50%;
+  /* bring your own prefixes */
+  transform: translate(0%, -50%);
+}
+#register{
+  font-size: 200%;
+}
+#body{
+  display: none;
+}
+#logon{
+  font-size: 300%;
+}
+#upl{
+  display: none;
+}
