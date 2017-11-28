@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from models import Subject, Files
+from .models import Subject, Files
 # Register your models here.
 
 def verify(modeladmin,request,queryset):
