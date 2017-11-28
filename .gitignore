@@ -1,3 +1,7 @@
+##DjANGO
 *.pyc
 *.sqlite
 media/
+*.log
+*.pot
+__pycache__/
