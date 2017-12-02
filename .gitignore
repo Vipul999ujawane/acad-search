@@ -1,3 +1,8 @@
+##DjANGO
 *.pyc
 *.sqlite
 media/
+*.log
+*.pot
+__pycache__/
+acads/migrations
