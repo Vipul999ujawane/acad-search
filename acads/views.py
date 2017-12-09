@@ -18,7 +18,7 @@ def upload(request):
             form.save()
             return HttpResponseRedirect("/success")
         else:
-            print "error"
+            print ("error")
     else:
         form = UploadForm()
     Sub=['AE','AG','AR','AT','BS','BT','CE','CH','CS','CY','EA','EC','EE',

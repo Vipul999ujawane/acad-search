@@ -19,7 +19,7 @@ class Subject(models.Model):
 class Files(models.Model):
     file_name=models.CharField(max_length=100,blank=False,verbose_name='Topic')
     files=models.FileField(upload_to=get_file_path,blank=False)
-    subject=models.ForeignKey(Subject)
+    subject=models.ForeignKey(Subject,on_delete=models.CASCADE)
     verified=models.BooleanField(default=False)
     uploader_roll_no=models.CharField(max_length=100,blank=False)
     uploader_email=models.EmailField(blank=False)

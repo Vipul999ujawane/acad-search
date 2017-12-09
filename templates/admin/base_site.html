@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | LOGIN {% endblock %}
+{% block extrastyle %}
+<style>
+    #header{
+    background-color:#fff;
+    }
+</style>
+{% endblock%}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}" style="color:#000;"> <center><b>ACAD-ADMIN </b></center></a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
