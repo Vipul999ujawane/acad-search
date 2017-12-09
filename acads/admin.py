@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
+from django.contrib.admin import AdminSite
 from django.contrib import admin
 from .models import Subject, Files
 # Register your models here.
@@ -18,6 +18,7 @@ class FileAdmin(admin.ModelAdmin):
     search_fields=('uploader_roll_no','file_name')
     list_filter=('verified','uploader_roll_no')
     actions=[verify,unverify]
+
 
 class SubjectAdmin(admin.ModelAdmin):
     list_display=('subject_name','subject_code','department_code',)

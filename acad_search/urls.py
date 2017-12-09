@@ -26,6 +26,3 @@ urlpatterns = [
     url(r'^get_sub_list/(?P<dept>\D+)/$',views.get_sub_list),
     url(r'^files/(?P<dept>\D+)/(?P<year>\w+)/$',views.get_files),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
-
-admin.site.site_title= "</acad-search> Admin"
-admin.site.site_header="</acad-search> Admin"
