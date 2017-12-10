@@ -7,17 +7,34 @@
 
 {% block bodyclass %}{{ block.super }} dashboard{% endblock %}
 
-{% block breadcrumbs %}{% endblock %}
+{% block breadcrumbs %}
+{% endblock %}
+{% block extrahead %}
+<style>
+    #user-tools {
+    color: #000000;
+    }
 
+</style>
+
+{% endblock %}
 {% block content %}
-<div id="content-main">
+<style>
+#user-tools a:visited{
+    color :#000000;
+    }
+#user-tools a:link{
+    color :#0000ff;
+    }
+</style>
+<div id="content-main" >
 
 {% if app_list %}
     {% for app in app_list %}
         <div class="app-{{ app.app_label }} module">
         <table>
         <caption>
-            <a href="{{ app.app_url }}" class="section" title="{% blocktrans with name=app.name %}Models in the {{ name }} application{% endblocktrans %}" background="#ffffff">{{ app.name }}</a>
+            <a href="{{ app.app_url }}" class="section" title="{% blocktrans with name=app.name %}Models in the {{ name }} application{% endblocktrans %}">{{ app.name }}</a>
         </caption>
         {% for model in app.models %}
             <tr class="model-{{ model.object_name|lower }}">
@@ -50,7 +67,9 @@
 {% endblock %}
 
 {% block sidebar %}
-<div id="content-related">
+
+
+<div id="content-related" >
     <div class="module" id="recent-actions-module">
         <h2>{% trans 'Recent actions' %}</h2>
         <h3>{% trans 'My actions' %}</h3>
@@ -79,4 +98,9 @@
             {% endif %}
     </div>
 </div>
+<style>
+       .breadcrumbs{
+    background-color: #ffffff;
+    }
+</style>
 {% endblock %}

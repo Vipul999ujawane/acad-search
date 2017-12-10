@@ -13,4 +13,18 @@
 <h1 id="site-name"><a href="{% url 'admin:index' %}" style="color:#000;"> <center><b>ACAD-ADMIN </b></center></a></h1>
 {% endblock %}
 
-{% block nav-global %}{% endblock %}
+{% block extrahead %}
+<style>
+    body.login {
+    background: #ffffff;
+    }
+</style>
+
+{% endblock %}
+{% block nav-global %}
+<style>
+    body.login {
+    background: #ffffff;
+    }
+</style>
+{% endblock %}
